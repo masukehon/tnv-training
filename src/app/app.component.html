@@ -1,0 +1,5 @@
+<div class="container">
+    <app-form></app-form>
+    <app-word *ngFor="let word of listWords" [wordInput]="word" [filterInput]="filterWord(word.isMemorized)"></app-word>
+</div>
+

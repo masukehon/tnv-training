@@ -1,0 +1,34 @@
+<button
+    class="btn btn-success"
+    style="margin-top: 10px; margin-bottom: 10px"
+    (click)="toggleForm()"
+    *ngIf="!toggleFormVariable"
+>
+    +
+</button>
+<br>
+<app-select></app-select>
+<div class="form-group word" *ngIf="toggleFormVariable">
+    <form [formGroup]="formNewWord" (ngSubmit)="submit()">
+        <input 
+            placeholder="English" 
+            class="form-control" 
+            formControlName="english" 
+        />
+        <br />
+        <input 
+            placeholder="Vietnamese" 
+            class="form-control" 
+            formControlName="vietnam" 
+        />
+        <br />
+        <div class="btn-container">
+            <button class="btn btn-success" type="submit">
+                Add word
+            </button>
+            <button class="btn btn-danger" (click)="toggleForm()">
+                Cancel
+            </button>
+        </div>
+    </form>
+</div>
